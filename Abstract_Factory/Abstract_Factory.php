@@ -129,11 +129,10 @@ $plasticFactory = new PlasticDoorFactory();
 $plasticDoor = $plasticFactory->makeDoor();
 $plasticExpert = $plasticFactory->makeExpert();
 
-echo('Plastic door description: ' . $plasticDoor->getDescription());
-echo ('</br>');
+echo 'Plastic door description: ' . $plasticDoor->getDescription() .'</br>';
 
 $ironFactory = new PlasticDoorFactory();
 $ironDoor = $ironFactory->makeDoor();
 $ironExpert = $ironFactory->makeExpert();
 
-echo ('Iron door price: ' . $ironDoor->getPrice());
+echo 'Iron door price: ' . $ironDoor->getPrice();

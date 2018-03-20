@@ -74,10 +74,10 @@ $factoryChannelForYoung = new FactoryChannelForYoung();
 $ChannelForYoung = $factoryChannelForYoung->makeChannel();
 $youngPerson = $factoryChannelForYoung->makePerson();
 
-echo('Channel description: ' . $ChannelForYoung->getDescription() . '</br> Age: ' . $youngPerson->getAge() . ' years old </br>');
+echo 'Channel description: ' . $ChannelForYoung->getDescription() . '</br> Age: ' . $youngPerson->getAge() . ' years old </br>' ;
 
 $factoryChannelForOld = new FactoryChannelForOld();
 $ChannelForOld = $factoryChannelForOld->makeChannel();
 $oldPerson = $factoryChannelForOld->makePerson();
 
-echo('Channel description: ' . $ChannelForOld->getDescription() . '</br> Age: ' . $oldPerson->getAge() . ' years old');
+echo 'Channel description: ' . $ChannelForOld->getDescription() . '</br> Age: ' . $oldPerson->getAge() . ' years old' ;
