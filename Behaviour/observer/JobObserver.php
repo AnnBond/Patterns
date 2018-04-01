@@ -72,6 +72,19 @@ class JobPostings extends Observable
     }
 
     /**
+     * delete subscriber from array
+     * @param Observer $observer
+     */
+    public function detach(Observer $observer)
+    {
+        foreach($this->observers as $key => $val) {
+            if ($val == $observer) {
+                unset($this->observers[$key]);
+            }
+        }
+    }
+
+    /**
      *
      * @param JobPost $jobPosting
      */
@@ -91,12 +104,12 @@ $jobPostings->attach($johnDoe);
 $jobPostings->attach($janeDoe);
 
 $firstPost = new JobPost('Junior Software Engineer');
+
 $SecondPost = new JobPost('Middle Software Engineer');
 
 // add new publication and look into notification
 $jobPostings->addJob($firstPost);
-$jobPostings->addJob($SecondPost);
 
-// Output
-// Привет John Doe! Появилась новая работа: Software Engineer
-// Привет Jane Doe! Появилась новая работа: Software Engineer
+$jobPostings->detach($janeDoe);
+
+$jobPostings->addJob($SecondPost);
